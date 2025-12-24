@@ -14,7 +14,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[FrontController::class, 'index'])->name('front.indexgit');
+Route::get('/',[FrontController::class, 'index'])->name('front.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
