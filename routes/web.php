@@ -11,11 +11,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectClientController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontController::class, 'index'])->name('front.indexgit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
