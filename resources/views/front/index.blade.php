@@ -838,8 +838,8 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
   <script src="{{ asset('js/carousel.js') }}"></script>
-  <script src="js/accordion.js"></script>
+  <script src="{{ asset('js/accordion.js') }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <script src="js/modal-video.js"></script>
+  <script src="{{ asset('js/modal-video.js') }}"></script>
 </body>
 </html>
