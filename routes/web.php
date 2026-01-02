@@ -59,7 +59,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
          Route::resource('hero_sections', HeroSectionController::class);
     });
 
-    Route::middleware('can:manage appointments ')->group(function () {
+    Route::middleware('can:manage appointments')->group(function () {
          Route::resource('appointments', AppointmentController::class);
     });
 
