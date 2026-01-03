@@ -54,6 +54,13 @@ class RolePermissionSeeder extends Seeder
             'name' => 'super_admin'
         ]);
 
+        $superAdminRole = Role::firstOrCreate([
+        'name' => 'super_admin'
+    ]);
+
+        $superAdminRole->syncPermissions(Permission::all());
+
+
         $user = User::create([
             'name' => 'Indra',
             'email' => 'superadmin@gmail.com',
