@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTeamRequest;
+use Illuminate\Support\Facades\DB;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
 
@@ -29,9 +31,22 @@ class OurTeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTeamRequest $request)
     {
         //
+        DB::transaction(function() use ($request) {
+            $validated = $request->validated();
+
+
+            if($request->hasFile('avatar')) {
+                $avatarPath = $request -> file('avatar')->store('avatars','public');
+                $validated['avatar'] = $avatarPath;
+            }
+
+            $newTeam = OurTeam::create($validated);
+        });
+
+        return redirect()->route('admin.teams.index');
     }
 
     /**

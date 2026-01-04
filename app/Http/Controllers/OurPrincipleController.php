@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StorePrincipleRequest;
 use App\Models\OurPrinciple;
 use Illuminate\Http\Request;
 
@@ -29,9 +30,28 @@ class OurPrincipleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePrincipleRequest $request)
     {
         //
+        DB::transaction(function() use ($request) {
+            $validated = $request->validated();
+
+
+            if($request->hasFile('icon')) {
+                $iconPath = $request -> file('icon')->store('icons','public');
+                $validated['icon'] = $iconPath;
+            }
+
+            if($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request -> file('thumbnail')->store('thumbnails','public');
+                $validated['thumbnail'] = $thumbnailPath;
+            }
+
+            $newPrinciple = OurPrinciple::create($validated);
+        });
+
+        return redirect()->route('admin.principles.index');
+        
     }
 
     /**
