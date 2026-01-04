@@ -84,5 +84,10 @@ class OurPrincipleController extends Controller
     public function destroy(OurPrinciple $ourPrinciple)
     {
         //
+        DB::transaction(function() use ($ourPrinciple) {
+            $ourPrinciple->delete();
+        });
+
+        return redirect()->route('admin.principles.index');
     }
 }
