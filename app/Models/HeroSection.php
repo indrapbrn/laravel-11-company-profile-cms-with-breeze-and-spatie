@@ -11,7 +11,7 @@ class HeroSection extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'achiviement',
+        'achievement',
         'heading',
         'subheading',
         'path_video',

@@ -24,10 +24,10 @@ class StoreHeroSectionRequest extends FormRequest
         return [
             //
             'heading' => ['required','string','max:255'],
-            'achiviement' => ['required','string','max:255'],
+            'achievement' => ['required','string','max:255'],
             'subheading' => ['required','string','max:255'],
             'path_video' => ['required','string','max:255'],
-            'banner' => ['required','image', 'mimes:png.jpg,jpeg,svg,webp'],
+            'banner' => ['required','image', 'mimes:png,jpg,jpeg,svg,webp'],
         ];
     }
 }
