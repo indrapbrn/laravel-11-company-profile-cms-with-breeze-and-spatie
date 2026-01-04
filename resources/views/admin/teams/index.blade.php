@@ -17,7 +17,7 @@
                 @forelse($teams as $team)
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
-                        <img src="{{storage::url($team->avatar)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                        <img src="{{Storage::url($team->avatar)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">{{$team->name}}</h3>
                         </div>
@@ -30,7 +30,7 @@
                         <a href="{{route('admin.teams.edit', $team)}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action="{{route('admin.teams.destroy', $team)}}" method="POST"> 
+                        <form action="{{ route('admin.teams.destroy', $team) }}" method="POST"> 
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
