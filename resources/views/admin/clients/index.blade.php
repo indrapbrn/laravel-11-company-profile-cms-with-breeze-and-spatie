@@ -17,7 +17,7 @@
                     @forelse($clients as $client)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src="{{storage::url($client->avatar)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{Storage::url($client->avatar)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
                                 <h3 class="text-indigo-950 text-xl font-bold">
                                     {{$client->name}} 
@@ -34,7 +34,7 @@
                         <a href="{{route ('admin.clients.edit', $client) }}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action="{{route ('admin.client.destroy', $client) }}" method="POST"> 
+                        <form action="{{route ('admin.clients.destroy', $client) }}" method="POST"> 
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
                                 Delete
                             </button>
