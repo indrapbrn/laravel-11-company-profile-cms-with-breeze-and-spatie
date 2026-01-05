@@ -15,7 +15,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('admin.products.create');
+
+        $products = Product::orderByDesc('id')->paginate(10);
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -24,6 +26,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+         return view('admin.products.create');
     }
 
     /**

@@ -17,7 +17,7 @@
                 @forelse($products as $product)
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
-                        <img src="{{storage::url($product->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                        <img src="{{Storage::url($product->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">
                                 {{$product->name}}
@@ -35,6 +35,8 @@
                             Edit
                         </a>
                         <form action="{{route ('admin.products.destroy', $product)}}" method="POST"> 
+                            @csrf
+                            @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
                                 Delete
                             </button>

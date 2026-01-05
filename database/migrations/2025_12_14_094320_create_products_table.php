@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->text('product');
             $table->string('thumbnail');
+            $table->text('about');
             $table->string('tagline');
             $table->string('name')->unique();
             $table->softDeletes();
