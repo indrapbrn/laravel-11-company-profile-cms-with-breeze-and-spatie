@@ -25,8 +25,8 @@ class StorePrincipleRequest extends FormRequest
             //
             'name' => ['required','string','max:255'],
             'subtitle' => ['required','string','max:255'],
-            'thumbnail' => ['required','image', 'mimes:png.jpg,jpeg,svg,webp'],
-            'icon' => ['required','image', 'mimes:png.jpg,jpeg,svg,webp'],
+            'thumbnail' => ['required','image', 'mimes:png,jpg,jpeg,svg,webp'],
+            'icon' => ['required','image', 'mimes:png,jpg,jpeg,svg,webp'],
         ];
     }
 }
