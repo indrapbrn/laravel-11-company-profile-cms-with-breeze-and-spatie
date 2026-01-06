@@ -70,6 +70,7 @@ class CompanyAboutController extends Controller
     public function edit(CompanyAbout $companyAbout)
     {
         //
+        
     }
 
     /**

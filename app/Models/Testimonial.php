@@ -17,6 +17,6 @@ class Testimonial extends Model
     ];
 
      public function client() {
-        return $this->belongsTo(ProjectClient::class,'project_client_idd');
+        return $this->belongsTo(ProjectClient::class,'project_client_id');
     }
 }

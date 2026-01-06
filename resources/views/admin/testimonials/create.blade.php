@@ -15,9 +15,15 @@
                     <div class="mt-4">
                         <x-input-label for="project_client" :value="__('project_client')" />
                         
-                        <select name="project_client_id" id="project_client_id" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
-                            <option value="">Choose project_client</option> 
-                        </select>
+                       <select name="project_client_id" id="project_client_id" class="py-3 rounded-lg pl-3 w-full border border-slate-300">
+        <option value="">Choose project client</option> 
+        
+            @foreach($clients as $client)
+                <option value="{{ $client->id }}" {{ old('project_client_id') == $client->id ? 'selected' : '' }}>
+                    {{ $client->name }} 
+                </option>
+            @endforeach
+        </select>
 
                         <x-input-error :messages="$errors->get('project_client')" class="mt-2" />
                     </div>
