@@ -41,7 +41,9 @@
                         <div class="flex flex-col gap-y-5">
 
                                 <input type="text" class="py-3 rounded-lg border-slate-300 border" placeholder="Write your keypoint" name="keypoints[]">
-
+                                <input type="text" class="py-3 rounded-lg border-slate-300 border" placeholder="Write your keypoint" name="keypoints[]">
+                                <input type="text" class="py-3 rounded-lg border-slate-300 border" placeholder="Write your keypoint" name="keypoints[]">
+                                
                         </div>
                         <x-input-error :messages="$errors->get('keypoints')" class="mt-2" />
                     </div>
