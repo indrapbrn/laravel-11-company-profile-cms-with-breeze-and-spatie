@@ -33,28 +33,34 @@ class CompanyAboutController extends Controller
      */
     public function store(StoreAboutRequest $request)
     {
-        //
-         DB::transaction(function() use ($request) {
+        DB::transaction(function () use ($request) {
+
             $validated = $request->validated();
 
-            if($request->hasFile('thumbnail')) {
-                $thumbnailPath = $request -> file('thumbnail')->store('thumbnails','public');
-                $validated['thumbnail'] = $thumbnailPath;
-            }
+            $keypoints = $validated['keypoints'];
+            unset($validated['keypoints']);
 
-            $newAbout = CompanyAbout::create($validated);
+            // Upload thumbnail
+            $validated['thumbnail'] = $request
+                ->file('thumbnail')
+                ->store('thumbnails', 'public');
 
-            if(!empty($validated['keypoints'])) {
-                foreach($validated['keypoints'] as $keypoint){
-                    $newAbout->keypoints()->create([
-                        'keypoint'=> $keypoint
-                    ]);
-                }
+            // Simpan about
+            $about = CompanyAbout::create($validated);
+
+            // Simpan keypoints
+            foreach ($keypoints as $keypoint) {
+                $about->keypoints()->create([
+                    'keypoint' => $keypoint,
+                ]);
             }
         });
 
-        return redirect()->route('admin.abouts.index');
+        return redirect()
+            ->route('admin.abouts.index')
+            ->with('success', 'About berhasil ditambahkan');
     }
+
 
     /**
      * Display the specified resource.

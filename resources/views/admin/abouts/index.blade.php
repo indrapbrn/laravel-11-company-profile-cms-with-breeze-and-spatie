@@ -17,7 +17,7 @@
                 @forelse($abouts as $about)
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
-                        <img src="{{storage::url($about->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                        <img src="{{Storage::url($about->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">
                                 {{$about->name}} 
@@ -40,7 +40,9 @@
                         <a href="" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action=" " method="POST"> 
+                        <form action="{{ route('admin.abouts.destroy', $about)}}" method="POST"> 
+                            @csrf
+                            @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
                                 Delete
                             </button>
