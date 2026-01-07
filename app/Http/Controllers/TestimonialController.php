@@ -64,6 +64,9 @@ class TestimonialController extends Controller
     public function edit(Testimonial $testimonial)
     {
         //
+        $clients = ProjectClient::orderbyDesc('id')->get();
+
+        return view('admin.testimonials.edit', compact('testimonial', 'clients'));
     }
 
     /**

@@ -65,9 +65,10 @@ class ProjectClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ProjectClient $projectClient)
+    public function edit(ProjectClient $client)
     {
         //
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**

@@ -45,6 +45,7 @@ class CompanyKeypointController extends Controller
     public function edit(CompanyKeypoint $companyKeypoint)
     {
         //
+        return view('admin.principles.edit', compact('principle'));
     }
 
     /**
