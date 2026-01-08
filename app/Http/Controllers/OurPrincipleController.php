@@ -77,6 +77,7 @@ class OurPrincipleController extends Controller
     public function update(Request $request, OurPrinciple $ourPrinciple)
     {
         //
+        
     }
 
     /**
