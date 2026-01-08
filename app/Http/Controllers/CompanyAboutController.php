@@ -68,6 +68,7 @@ class CompanyAboutController extends Controller
     public function show(CompanyAbout $companyAbout)
     {
         //
+        
     }
 
     /**
@@ -83,9 +84,10 @@ class CompanyAboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyAbout $companyAbout)
+    public function update(Request $request, CompanyAbout $about)
     {
         //
+        
     }
 
     /**
