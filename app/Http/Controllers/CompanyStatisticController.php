@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStatisticRequest;
+use App\Http\Requests\UpdateStatisticRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\CompanyStatistic;
 use Illuminate\Http\Request;
@@ -69,9 +70,22 @@ class CompanyStatisticController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyStatistic $companyStatistic)
+    public function update(UpdateStatisticRequest $request, CompanyStatistic $statistic)
     {
         //
+        DB::transaction(function() use ($request, $statistic) {
+            $validated = $request->validated();
+
+            if($request->hasFile('icon')) {
+                $iconPath = $request -> file('icon')->store('icons','public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $statistic->update($validated);
+        });
+
+        return redirect()->route('admin.statistics.index');
+        
     }
 
     /**

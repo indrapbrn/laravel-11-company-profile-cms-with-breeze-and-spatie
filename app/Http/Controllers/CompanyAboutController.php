@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAboutRequest;
+use App\Http\Requests\UpdateAboutRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\CompanyAbout;
 use Illuminate\Http\Request;
@@ -84,9 +85,22 @@ class CompanyAboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyAbout $about)
+    public function update(UpdateAboutRequest $request, CompanyAbout $about)
     {
         //
+        DB::transaction(function() use ($request, $about) {
+            $validated = $request->validated();
+
+            if($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request -> file('thumbnail')->store('thumbnail','public');
+                $validated['thumbnail'] = $thumbnailPath;
+            }
+
+            $about->update($validated);
+        });
+
+        return redirect()->route('admin.abouts.index');
+        
         
     }
 
