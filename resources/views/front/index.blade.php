@@ -152,6 +152,8 @@
       
     </div>
   </div>
+
+  
   <div id="Stats" class="bg-cp-black w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10">
       <div class="flex flex-wrap items-center justify-between p-[10px]">
@@ -172,46 +174,29 @@
       </div>
     </div>
   </div>
+
+  
   <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+
+    @forelse($products as $product)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
       <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-        <img src="assets/thumbnails/product cover one.png" class="w-full h-full object-contain" alt="thumbnail">
+        <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-contain" alt="thumbnail">
       </div>
       <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">WORLD TRADE CENTER</p>
+        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">{{$product->tagline}}</p>
         <div class="flex flex-col gap-[10px]">
-          <h2 class="font-bold text-4xl leading-[45px]">Office Integrated with Biggest Data Server Center</h2>
-          <p class="leading-[30px] text-cp-light-grey">Lorem ipsum angga’s framework researching amet dolor metrics and perfomance burning rate random says.</p>
+          <h2 class="font-bold text-4xl leading-[45px]">{{$product->name}}</h2>
+          <p class="leading-[30px] text-cp-light-grey">{{$product->about}}</p>
         </div>
         <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</a>
       </div>
-    </div>
-    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-      <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-        <img src="assets/thumbnails/product cover two.png" class="w-full h-full object-contain" alt="thumbnail">
-      </div>
-      <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">FAMILY HARMONY</p>
-        <div class="flex flex-col gap-[10px]">
-          <h2 class="font-bold text-4xl leading-[45px]">Beautiful Theme Park Family and Kids Friendly</h2>
-          <p class="leading-[30px] text-cp-light-grey">Lorem ipsum angga’s framework researching amet dolor metrics and perfomance burning rate random says.</p>
-        </div>
-        <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</a>
-      </div>
-    </div>
-    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-      <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-        <img src="assets/thumbnails/product cover three.png" class="w-full h-full object-contain" alt="thumbnail">
-      </div>
-      <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">ECO-FRIENDLY SPACE</p>
-        <div class="flex flex-col gap-[10px]">
-          <h2 class="font-bold text-4xl leading-[45px]">Public City Center Park with Super Mall & Airport</h2>
-          <p class="leading-[30px] text-cp-light-grey">Lorem ipsum angga’s framework researching amet dolor metrics and perfomance burning rate random says.</p>
-        </div>
-        <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</a>
-      </div>
-    </div>
+  </div>
+  @empty
+  <p>New Data not exist</p>
+  @endforelse
+
+
   </div>
   <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
