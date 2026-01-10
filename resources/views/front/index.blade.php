@@ -129,84 +129,46 @@
       <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
+
+      @forelse($principles as $principle)
       <div class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
         <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-          <img src="assets/thumbnails/cover1.jpg" class="object-cover object-center w-full h-full" alt="thumbnails">
+          <img src="{{Storage::url($principle->thumbnail)}}" class="object-cover object-center w-full h-full" alt="thumbnails">
         </div>
         <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
           <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/note-favorite.svg" class="w-full h-full object-contain" alt="icon">
+            <img src="{{Storage::url($principle->icon)}}" class="w-full h-full object-contain" alt="icon">
           </div>
           <div class="flex flex-col gap-1">
-            <p class="title font-bold text-xl leading-[30px]">Prioritize Trust</p>
-            <p class="leading-[30px] text-cp-light-grey">Shayna is an award-winning ametia construction company with lorem</p>
+            <p class="title font-bold text-xl leading-[30px]">{{$principle->name}}</p>
+            <p class="leading-[30px] text-cp-light-grey">{{$principle->subtitle}}/p>
           </div>
           <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
         </div>
       </div>
-      <div class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
-        <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-          <img src="assets/thumbnails/cover2.jpg" class="object-cover object-center w-full h-full" alt="thumbnails">
-        </div>
-        <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/user-octagon.svg" class="w-full h-full object-contain" alt="icon">
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="title font-bold text-xl leading-[30px]">Professional People</p>
-            <p class="leading-[30px] text-cp-light-grey">Shayna is an award-winning ametia construction company with lorem</p>
-          </div>
-          <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
-        </div>
-      </div>
-      <div class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
-        <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-          <img src="assets/thumbnails/cover3.jpg" class="object-cover object-center w-full h-full" alt="thumbnails">
-        </div>
-        <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/building-4.svg" class="w-full h-full object-contain" alt="icon">
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="title font-bold text-xl leading-[30px]">Eco Friendly Concept</p>
-            <p class="leading-[30px] text-cp-light-grey">Shayna is an award-winning ametia construction company with lorem</p>
-          </div>
-          <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
-        </div>
-      </div>
+      @empty
+      <p>New Data not exist</p>
+      @endforelse
+      
     </div>
   </div>
   <div id="Stats" class="bg-cp-black w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10">
       <div class="flex flex-wrap items-center justify-between p-[10px]">
+
+        
+        @forelse($statistics as $statistic)
         <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
           <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/cup.svg" class="object-contain w-full h-full" alt="icon">
+            <img src="{{ Storage::url($statistic->icon) }}" class="object-contain w-full h-full" alt="icon">
           </div>
-          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">189.409</p>
-          <p class="text-cp-light-grey">Award-winning Buildings</p>
+          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">{{$statistic->goal}}</p>
+          <p class="text-cp-light-grey">{{$statistic->name}}</p>
         </div>
-        <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/buildings.svg" class="object-contain w-full h-full" alt="icon">
-          </div>
-          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">198</p>
-          <p class="text-cp-light-grey">HQ Worldwide</p>
-        </div>
-        <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/status-up.svg" class="object-contain w-full h-full" alt="icon">
-          </div>
-          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">$512bn</p>
-          <p class="text-cp-light-grey">Success Investments</p>
-        </div>
-        <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-            <img src="assets/icons/star.svg" class="object-contain w-full h-full" alt="icon">
-          </div>
-          <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">4.9/5</p>
-          <p class="text-cp-light-grey">Honest Reviews</p>
-        </div>
+        @empty
+        <p>New Data not exist</p>
+        @endforelse
+
       </div>
     </div>
   </div>
