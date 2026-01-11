@@ -195,135 +195,42 @@
   @empty
   <p>New Data not exist</p>
   @endforelse
-
-
   </div>
+
+
   <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
       <div class="flex flex-col gap-[14px] items-center">
         <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
         <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World</h2>
       </div>
+
+
       <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+        
+        @forelse($teams as $team)
         <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
           <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
             <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo1.png" class="object-cover w-full h-full object-center" alt="photo">
+              <img src="{{ Storage::url($team->avatar) }}" class="object-cover w-full h-full object-center" alt="photo">
             </div>
           </div>
           <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Angga Setiawan</p>
-            <p class="text-cp-light-grey">Chief Executive Officer</p>
+            <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
+            <p class="text-cp-light-grey">{{ $team->occupation }}</p>
           </div>
           <div class="flex items-center justify-center gap-[10px]">
             <div class="w-6 h-6 flex shrink-0">
               <img src="assets/icons/global.svg" alt="icon">
             </div>
-            <p class="text-cp-dark-blue font-semibold">Shanghai, China</p>
+            <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
           </div>
         </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo2.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Shayna Liza</p>
-            <p class="text-cp-light-grey">Product Manager</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Bali, Indonesia</p>
-          </div>
-        </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo3.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Bruno Oleo</p>
-            <p class="text-cp-light-grey">Customer Relations</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Orchard, Singapore</p>
-          </div>
-        </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo4.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Sami Kimi</p>
-            <p class="text-cp-light-grey">Senior 3D Designer</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Ho Chi Min, Vietnam</p>
-          </div>
-        </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo5.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Wibowo Putra</p>
-            <p class="text-cp-light-grey">Senior 3D Designer</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Ho Chi Min, Vietnam</p>
-          </div>
-        </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo6.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Putri Emily</p>
-            <p class="text-cp-light-grey">Chief Executive Officer</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Shanghai, China</p>
-          </div>
-        </div>
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="assets/photos/photo7.png" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">Yuyan Chin</p>
-            <p class="text-cp-light-grey">Product Manager</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">Bali, Indonesia</p>
-          </div>
-        </div>
+
+          @empty
+          <p>New Data not exist</p>
+          @endforelse
+        
         <a href="team.html" class="view-all-card">
           <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
             <div class="w-[60px] h-[60px] flex shrink-0">
