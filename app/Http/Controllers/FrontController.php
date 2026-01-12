@@ -6,6 +6,7 @@ use App\Models\CompanyStatistic;
 use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -16,7 +17,9 @@ class FrontController extends Controller
         $principles = OurPrinciple::take(4)->get();
         $products = Product::take(3)->get();
         $teams = OurTeam::take(7)->get();
-        
-        return view('front.index', compact('statistics','principles', 'products','teams'));
+        $testimonials = Testimonial::take(4)->get();
+
+        return view('front.index', compact('statistics','principles', 'products','teams',
+                                            'testimonials'));
     }
 }
