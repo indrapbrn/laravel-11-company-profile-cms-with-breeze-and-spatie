@@ -18,11 +18,11 @@
         <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
             <div class="flex items-center gap-3">
                 <div class="flex shrink-0 h-[43px] overflow-hidden">
-                    <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+                    <img src="assets/logo/logo-removebg-preview.png" class="object-contain w-full h-full" alt="logo">
                 </div>
                 <div class="flex flex-col">
-                  <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">Company Name</p>
-                  <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+                  <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">PT. Arisma Teknika Mesari</p>
+                  <p id="CompanyTagline" class="text-sm text-cp-light-grey">We are Here for You</p>
                 </div>
             </div>
             <ul class="flex flex-wrap items-center gap-[30px]">
@@ -44,22 +44,24 @@
             </ul>
             <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get a Quote</a>
         </nav>
+
+        @forelse($hero_sections as $hero_section)
         <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
           <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
             <div class="w-5 h-5 flex shrink-0 overflow-hidden">
-              <img src="assets/icons/crown.svg" class="object-contain" alt="icon">
+              <img src="{{asset('assets/icons/crown.svg')}}" class="object-contain" alt="icon">
             </div>
-            <p class="font-semibold text-sm">We reached 10,000 huge buildings in 2024</p>
+            <p class="font-semibold text-sm">{{ $hero_section->achievement}}</p>
           </div>
           <div class="flex flex-col gap-[10px]">
-            <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">Help Build Biggest <br> Dream From Scratch</h1>
-            <p class="text-cp-light-grey leading-[30px] max-w-[437px]">Shayna is an award-winning construction company with a team of skilled craftsmen and women who have over 100 years of combined experience.</p>
+            <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{ $hero_section->heading }}</h1>
+            <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero_section->subheading }}</p>
           </div>
           <div class="flex items-center gap-4">
             <a href="" class="bg-cp-dark-blue p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore Now</a>
             <button class="bg-cp-black p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]" onclick="{modal.show()}">
               <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                <img src="assets/icons/play-circle.svg" class="w-full h-full object-contain" alt="icon">
+                <img src="{{asset('assets/icons/play-circle.svg')}}" class="w-full h-full object-contain" alt="icon" >
               </div>
               <span>Watch Video</span>
             </button>
@@ -67,9 +69,14 @@
         </div>
     </div>
     <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-        <img src="assets/backgrounds/banner.jpg" class="object-cover w-full h-full" alt="banner">
+        <img src="{{Storage::url($hero_section->banner) }}" class="object-cover w-full h-full" alt="banner">
     </div>
+      @empty
+      <p>New Data not exist</p>
+      @endforelse  
   </div>
+
+
   <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
     <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
     <div class="logo-container flex flex-wrap gap-5 justify-center">
@@ -214,7 +221,7 @@
           </div>
           <div class="flex items-center justify-center gap-[10px]">
             <div class="w-6 h-6 flex shrink-0">
-              <img src="assets/icons/global.svg" alt="icon">
+              <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
             </div>
             <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
           </div>
@@ -278,13 +285,13 @@
                   <img src="assets/icons/Star-rating.svg" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="assets/icons/Star-rating.svg" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="assets/icons/Star-rating.svg" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="assets/icons/Star-rating.svg" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
                 </div>
               </div>
             </div>

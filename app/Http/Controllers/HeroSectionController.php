@@ -70,10 +70,10 @@ class HeroSectionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateHeroSectionRequest $request, HeroSection $hero)
+    public function update(UpdateHeroSectionRequest $request, HeroSection $hero_section)
     {
         //
-          DB::transaction(function() use ($request, $hero) {
+          DB::transaction(function() use ($request, $hero_section) {
             $validated = $request->validated();
 
             if($request->hasFile('banner')) {
@@ -81,10 +81,10 @@ class HeroSectionController extends Controller
                 $validated['banner'] = $bannerPath;
             }
 
-            $hero->update($validated);
+            $hero_section->update($validated);
         });
 
-        return redirect()->route('admin.clients.index');
+        return redirect()->route('admin.hero_sections.index');
         
     }
 

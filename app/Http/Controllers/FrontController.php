@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyStatistic;
+use App\Models\HeroSection;
 use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
@@ -18,8 +19,9 @@ class FrontController extends Controller
         $products = Product::take(3)->get();
         $teams = OurTeam::take(7)->get();
         $testimonials = Testimonial::take(4)->get();
+        $hero_sections= HeroSection::orderbyDesc('id')->take(1)->get();
 
         return view('front.index', compact('statistics','principles', 'products','teams',
-                                            'testimonials'));
+                                            'testimonials', 'hero_sections'));
     }
 }
