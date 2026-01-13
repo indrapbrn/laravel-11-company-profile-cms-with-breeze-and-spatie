@@ -187,7 +187,8 @@
         <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-contain" alt="thumbnail">
       </div>
       <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">{{$product->tagline}}</p>
+        <p class="badge w-fit bg-cp-pale-red text-cp-dark-red p-[8px_16px] rounded-full uppercase font-bold text-sm
+        ">{{$product->tagline}}</p>
         <div class="flex flex-col gap-[10px]">
           <h2 class="font-bold text-4xl leading-[45px]">{{$product->name}}</h2>
           <p class="leading-[30px] text-cp-light-grey">{{$product->about}}</p>
@@ -205,12 +206,12 @@
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
       <div class="flex flex-col gap-[14px] items-center">
         <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
-        <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World</h2>
+        <h2 class="font-bold text-4xl leading-[45px] text-center">Meet the People <br> Behind Our Company</h2>
       </div>
       <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">      
         @forelse($teams as $team)
         <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
+          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#DC2626_8.72%,_#B91C1C_87.11%)]">
             <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
               <img src="{{ Storage::url($team->avatar) }}" class="object-cover w-full h-full object-center" alt="photo">
             </div>
@@ -259,7 +260,7 @@
         <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
           <div class="flex flex-col gap-[30px]">
             <div class="h-9 overflow-hidden">
-              <img src="assets/logo/logo-54.svg" class="object-contain" alt="icon">
+              <img src="{{asset('assets/logo/dropbox-1.svg')}}" class="object-contain" alt="icon">
             </div>
             <div class="relative pt-[27px] pl-[30px]">
               <div class="absolute top-0 left-0">
@@ -420,11 +421,11 @@
       <div class="flex flex-col gap-10">
         <div class="flex items-center gap-3">
           <div class="flex shrink-0 h-[43px] overflow-hidden">
-              <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+              <img src="{{ asset('assets/logo/logo-removebg-preview.png') }}" class="object-contain w-full h-full" alt="logo">
           </div>
           <div class="flex flex-col">
-            <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">ShaynaComp</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+            <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">PT.Arisma Teknika Mesari</p>
+            <p id="CompanyTagline" class="text-sm text-cp-light-grey">We are Here for You</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -435,17 +436,17 @@
           </a>
           <a href="">
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="assets/icons/whatsapp.svg" class="w-full h-full object-contain" alt="whatsapp">
+              <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain" alt="whatsapp">
             </div>
           </a>
           <a href="">
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="assets/icons/facebook.svg" class="w-full h-full object-contain" alt="facebook">
+              <img src="{{ asset('assets/icons/facebook.svg') }}" class="w-full h-full object-contain" alt="facebook">
             </div>
           </a>
           <a href="">
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="assets/icons/instagram.svg" class="w-full h-full object-contain" alt="instagram">
+              <img src="{{ asset('assets/icons/instagram.svg') }}" class="w-full h-full object-contain" alt="instagram">
             </div>
           </a>
         </div>
@@ -453,10 +454,10 @@
       <div class="flex flex-wrap gap-[50px]">
         <div class="flex flex-col w-[200px] gap-3">
           <p class="font-bold text-lg text-white">Products</p>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">General Contract</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Building Assessment</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper Builder</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal Constructions</a>
+          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Trading Simulation</a>
+          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Insight</a>
+          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Edutrade</a>
+          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Market Advisory</a>
         </div>
         <div class="flex flex-col w-[200px] gap-3">
           <p class="font-bold text-lg text-white">About</p>
@@ -475,7 +476,7 @@
       </div>
     </div>
     <div class="absolute -bottom-[135px] w-full">
-      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">INDRA</p>
+      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">ARISMA</p>
     </div>
   </footer>
   <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
