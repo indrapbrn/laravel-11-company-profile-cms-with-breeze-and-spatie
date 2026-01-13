@@ -25,8 +25,8 @@ class UpdatePrincipleRequest extends FormRequest
             //
             'name' => ['required','string','max:255'],
             'subtitle' => ['required','string','max:255'],
-            'thumbnail' => ['sometimes','image', 'mimes:png.jpg,jpeg,svg,webp'],
-            'icon' => ['sometimes','image', 'mimes:png.jpg,jpeg,svg,webp'],
+            'thumbnail' => ['sometimes','image', 'mimes:png,jpg,jpeg,svg,webp'],
+            'icon' => ['sometimes','image', 'mimes:png,jpg,jpeg,svg,webp'],
         ];
     }
 }

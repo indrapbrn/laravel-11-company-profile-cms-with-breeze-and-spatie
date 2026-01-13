@@ -82,47 +82,47 @@
     <div class="logo-container flex flex-wrap gap-5 justify-center">
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/microsoft.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/google.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/sketch.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-44.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/paypal.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/adobe.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/lever.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/lattice.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/zapier.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
       <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
         <div class="overflow-hidden h-9">
-          <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
+          <img src="{{asset('assets/logo/hotjar.png')}}" class="object-contain w-full h-full" alt="logo">
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@
           </div>
           <div class="flex flex-col gap-1">
             <p class="title font-bold text-xl leading-[30px]">{{$principle->name}}</p>
-            <p class="leading-[30px] text-cp-light-grey">{{$principle->subtitle}}/p>
+            <p class="leading-[30px] text-cp-light-grey">{{$principle->subtitle}}</p>
           </div>
           <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
         </div>
@@ -279,10 +279,10 @@
               </div>
               <div class="flex flex-nowrap">
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="assets/icons/Star-rating.svg" alt="star">
+                  <img src="{{asset ('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="assets/icons/Star-rating.svg" alt="star">
+                  <img src="{{asset ('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
                   <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">

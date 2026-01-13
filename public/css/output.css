@@ -1116,14 +1116,17 @@ video {
   background-color: rgb(246 247 250 / var(--tw-bg-opacity));
 }
 
+
 .bg-cp-black {
   --tw-bg-opacity: 1;
   background-color: rgb(8 7 53 / var(--tw-bg-opacity));
 }
 
+/* Ini dibawah warna merah bukan dark blue awowwkwowo */
+
 .bg-cp-dark-blue {
   --tw-bg-opacity: 1;
-  background-color: rgb(49 46 203 / var(--tw-bg-opacity));
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .bg-cp-light-blue {
