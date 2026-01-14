@@ -16,7 +16,7 @@
   <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
       
-        
+        <x-navbar/>
 
         @forelse($hero_sections as $hero_section)
         <input type="hidden" name="path_video" id=path_video value="{{ $hero_section->path_video }}">
