@@ -18,7 +18,7 @@ class FrontController extends Controller
         $principles = OurPrinciple::take(4)->get();
         $products = Product::take(3)->get();
         $teams = OurTeam::take(7)->get();
-        $testimonials = Testimonial::take(4)->get();
+        $testimonials = Testimonial::take(8)->get();
         $hero_sections= HeroSection::orderbyDesc('id')->take(1)->get();
 
         return view('front.index', compact('statistics','principles', 'products','teams',

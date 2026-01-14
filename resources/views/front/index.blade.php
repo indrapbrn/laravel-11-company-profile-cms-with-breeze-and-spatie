@@ -249,50 +249,50 @@
 
 
   <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
-
-    @forElse ($testimonials as $testimonial)
     <div class="flex flex-col gap-[14px] items-center">
       <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
       <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
     </div>
     <div class="main-carousel w-full">
+
+      @forElse($testimonials as $testimonial)
       <div class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
         <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
           <div class="flex flex-col gap-[30px]">
             <div class="h-9 overflow-hidden">
-              <img src="{{asset('assets/logo/dropbox-1.svg')}}" class="object-contain" alt="icon">
+              <img src="{{Storage::url($testimonial->client->logo)}}" class="object-contain" alt="icon">
             </div>
             <div class="relative pt-[27px] pl-[30px]">
               <div class="absolute top-0 left-0">
-                <img src="assets/icons/quote.svg" alt="icon">
+                <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
               </div>
-              <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial -> message}}</p>
+              <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial->message }}</p>
             </div>
             <div class="flex items-center justify-between pl-[30px]">
               <div class="flex items-center gap-6">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                  <img src="{{ Storage::url($testimonial->client->avatar) }}" class="w-full h-full object-cover" alt="photo">
+                  <img src="{{ Storage::url($testimonial ->client->avatar) }}" class="w-full h-full object-cover" alt="photo">
                 </div>
                 <div class="flex flex-col justify-center gap-1">
-                  <p class="font-bold">{{ $testimonial -> client -> name}}</p>
-                  <p class="text-sm text-cp-light-grey">{{ $testimonial -> client -> occupation}}</p>
+                  <p class="font-bold">{{ $testimonial ->client->name }}</p>
+                  <p class="text-sm text-cp-light-grey">{{ $testimonial ->client->occupation }}</p>
                 </div>
               </div>
               <div class="flex flex-nowrap">
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="{{asset ('assets/icons/Star-rating.svg') }}" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="{{asset ('assets/icons/Star-rating.svg') }}" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
                 <div class="w-6 h-6 flex shrink-0">
-                  <img src="{{asset('assets/icons/Star-rating.svg')}}" alt="star">
+                  <img src="{{asset('assets/icons/Star-rating.svg') }}" alt="star">
                 </div>
               </div>
             </div>
@@ -300,14 +300,14 @@
           <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
           </div>
         </div>
-        <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-          <img src="{{ Storage::url($testimonial->thumbnail) }}" class="w-full h-full object-cover object-center" alt="thumbnail">
+        <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden">
+          <img src="{{Storage::url($testimonial->thumbnail) }}" class="w-full h-full object-cover object-center" alt="thumbnail">
         </div>
       </div>
-    </div>
     @empty
     <p>New Data not exist</p>
     @endforelse
+    </div>
   </div>
 
 
