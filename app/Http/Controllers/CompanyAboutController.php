@@ -88,19 +88,33 @@ class CompanyAboutController extends Controller
     public function update(UpdateAboutRequest $request, CompanyAbout $about)
     {
         //
-        DB::transaction(function() use ($request, $about) {
-            $validated = $request->validated();
+            DB::transaction(function () use ($request, $about) {
 
-            if($request->hasFile('thumbnail')) {
-                $thumbnailPath = $request -> file('thumbnail')->store('thumbnail','public');
-                $validated['thumbnail'] = $thumbnailPath;
+            // Ambil hanya field about
+            $data = $request->only(['name', 'type']);
+
+            if ($request->hasFile('thumbnail')) {
+                $data['thumbnail'] = $request->file('thumbnail')
+                    ->store('thumbnails', 'public');
             }
 
-            $about->update($validated);
+            // Update company_abouts
+            $about->update($data);
+
+            // 🔥 Update keypoints
+            $about->keypoints()->delete();
+
+            foreach ($request->keypoints ?? [] as $kp) {
+                if ($kp) {
+                    $about->keypoints()->create([
+                        'keypoint' => $kp
+                    ]);
+                }
+            }
         });
 
-        return redirect()->route('admin.abouts.index');
-        
+        return redirect()->route('admin.abouts.index')
+            ->with('success', 'About updated successfully');
         
     }
 

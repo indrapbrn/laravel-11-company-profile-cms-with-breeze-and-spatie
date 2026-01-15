@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompanyAbout;
 use App\Models\CompanyStatistic;
 use App\Models\HeroSection;
 use App\Models\OurPrinciple;
@@ -29,7 +30,30 @@ class FrontController extends Controller
 
     $teams = OurTeam::take(12)->get();
     $statistics = CompanyStatistic::take(4)->get();
+    $products = Product::take(6)->get();
     
-    return view('front.team', compact('teams','statistics'));                                       
+    return view('front.team', compact('teams','statistics', 'products'));                                       
+    }
+
+    public function about() {
+
+    $teams = OurTeam::take(12)->get();
+    $statistics = CompanyStatistic::take(4)->get();
+    $abouts = CompanyAbout::with('keypoints')
+    ->latest()
+    ->take(3)
+    ->get();
+
+
+    
+    return view('front.about', compact('teams','statistics', 'abouts'));                                       
+    }
+
+    public function product() {
+
+    $statistics = CompanyStatistic::take(4)->get();
+    $products = Product::take(6)->get();
+    
+    return view('front.product', compact('statistics', 'products'));                                       
     }
 }

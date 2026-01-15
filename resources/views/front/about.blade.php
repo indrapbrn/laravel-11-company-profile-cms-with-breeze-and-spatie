@@ -11,50 +11,67 @@
   
 </head>
 <body class="font-poppins text-cp-black">
-  <div id="header" class="bg-[#F6F7FA] relative h-[600px] -mb-[388px]">
+
+  <div id="header" class="bg-[#F6F7FA] relative">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar/>
+        <div class="flex flex-col gap-[50px] items-center py-20">
+          <div class="breadcrumb flex items-center justify-center gap-[30px]">
+            <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
+            <span class="text-cp-light-grey">/</span>
+            <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">About Us</p>
+          </div>
+          <h2 class="font-bold text-4xl leading-[45px] text-center">Since Beginning We Only <br> Want to Make World Better</h2>
+        </div>
     </div>
   </div>
-    <div id="Teams" class="w-full px-[10px] relative z-10">
-    <div class="container max-w-[1130px] mx-auto flex flex-col gap-[50px] items-center">
-      <div class="flex flex-col gap-[50px] items-center">
-        <div class="breadcrumb flex items-center justify-center gap-[30px]">
-          <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
-          <span class="text-cp-light-grey">/</span>
-          <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Team</p>
-        </div>
-        <h2 class="font-bold text-4xl leading-[45px] text-center">We’re Here to Build <br> Your Awesome Projects</h2>
-      </div>
-      <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-        @forelse($teams as $team)
-        <div class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-          <div class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#DC2626_8.72%,_#B91C1C_87.11%)]">
-            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-              <img src="{{ Storage::url($team->avatar) }}" class="object-cover w-full h-full object-center" alt="photo">
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center">
-            <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
-            <p class="text-cp-light-grey">{{ $team->occupation }}</p>
-          </div>
-          <div class="flex items-center justify-center gap-[10px]">
-            <div class="w-6 h-6 flex shrink-0">
-              <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
-            </div>
-            <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
-          </div>
+  
+    @forelse($abouts as $about)
+    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
+
+        <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
+            <img src="{{ Storage::url($about->thumbnail) }}"
+                class="w-full h-full object-contain"
+                alt="thumbnail">
         </div>
 
-          @empty
-          <p>New Data not exist</p>
-          @endforelse
-        
-      </div>
+        <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                OUR {{ strtoupper($about->type) }}
+            </p>
+
+            <div class="flex flex-col gap-[10px]">
+                <h2 class="font-bold text-4xl leading-[45px]">
+                    {{ $about->name }}
+                </h2>
+
+                <div class="flex flex-col gap-5">
+                    @forelse($about->keypoints as $keypoint)
+                        <div class="flex items-center gap-[10px]">
+                            <div class="w-6 h-6 flex shrink-0">
+                                <img src="{{ asset('assets/icons/tick-circle.svg') }}" alt="icon">
+                            </div>
+                            <p class="leading-[26px] font-semibold">
+                                {{ $keypoint->keypoint }}
+                            </p>
+                        </div>
+                    @empty
+                        <p class="text-gray-400">No keypoints available</p>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
+    @empty
+    <p class="text-center text-gray-400">Data not exists</p>
+    @endforelse
 
-   <div id="Stats" class="bg-cp-black w-full mt-20">
+
+  <!--Call with component/client.blade.php -->
+  <x-client />
+
+  <div id="Stats" class="bg-cp-black w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10">
       <div class="flex flex-wrap items-center justify-between p-[10px]"> 
         @forelse($statistics as $statistic)
@@ -70,7 +87,7 @@
         @endforelse
       </div>
     </div>
-    </div>
+  </div>
 
   <!--Call with component/faq.blade.php -->
   <x-faq />

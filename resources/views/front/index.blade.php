@@ -50,66 +50,14 @@
       @endforelse  
   </div>
 
-
-  <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
-    <div class="logo-container flex flex-wrap gap-5 justify-center">
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/microsoft.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/google.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/sketch.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/paypal.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/adobe.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/lever.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/lattice.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/zapier.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-      <div class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-        <div class="overflow-hidden h-9">
-          <img src="{{asset('assets/logo/hotjar.png')}}" class="object-contain w-full h-full" alt="logo">
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <x-client />
 
   <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">
         <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
-        <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice <br> For Your Company</h2>
+        <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice For Your Company</h2>
       </div>
-      <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
     </div>
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
       @forelse($principles as $principle)
@@ -224,7 +172,7 @@
 
   <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
     <div class="flex flex-col gap-[14px] items-center">
-      <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
+      <p class="badge w-fit bg-cp-pale-red text-cp-dark-red p-[8px_16px] rounded-full uppercase font-bold text-sm">SUCCESS CLIENTS</p>
       <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
     </div>
     <div class="main-carousel w-full">
@@ -284,175 +232,12 @@
     </div>
   </div>
 
+  <!--Call with component/faq.blade.php -->
+  <x-faq />
 
-  <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-    <div class="flex items-center justify-between">
-      <div class="flex flex-col gap-[14px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR AWARDS</p>
-        <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
-      </div>
-      <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
-    </div>
-    <div class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-      <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="assets/icons/cup-blue.svg" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-xl leading-[30px]">Solid Fundamental Crafter Async</p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-cp-light-grey">Bali, 2020</p>
-      </div>
-      <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="assets/icons/cup-blue.svg" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-xl leading-[30px]">Most Crowded Yet Harmony Place</p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-cp-light-grey">Shanghai, 2021</p>
-      </div>
-      <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="assets/icons/cup-blue.svg" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-xl leading-[30px]">Small Things Made Much Big Impacts</p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-cp-light-grey">Zurich, 2022</p>
-      </div>
-      <div class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="assets/icons/cup-blue.svg" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-xl leading-[30px]">Teamwork and Solidarity</p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-cp-light-grey">Bandung, 2023</p>
-      </div>
-    </div>
-  </div>
-  <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
-    <div class="container max-w-[1000px] mx-auto">
-      <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
-          <div class="flex flex-col gap-[30px]">
-              <div class="flex flex-col gap-[10px]">
-                  <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
-              </div>
-              <a href="contact.html" class="p-5 bg-cp-black rounded-xl text-white w-fit font-bold">Contact Us</a>
-          </div>
-          <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
-              <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                  <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-1">
-                      <span class="font-bold text-lg leading-[27px] text-left">Can installments be beneficial for both?</span>
-                      <div class="arrow w-9 h-9 flex shrink-0">
-                          <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
-                      </div>
-                  </button>
-                  <div id="accordion-faq-1" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
-                  </div>
-              </div>
-              <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                  <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-2">
-                      <span class="font-bold text-lg leading-[27px] text-left">What kind of framework you popular with?</span>
-                      <div class="arrow w-9 h-9 flex shrink-0">
-                          <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
-                      </div>
-                  </button>
-                  <div id="accordion-faq-2" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
-                  </div>
-              </div>
-              <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                  <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-3">
-                      <span class="font-bold text-lg leading-[27px] text-left">What insurance provider do you use?</span>
-                      <div class="arrow w-9 h-9 flex shrink-0">
-                          <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
-                      </div>
-                  </button>
-                  <div id="accordion-faq-3" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
-                  </div>
-              </div>
-              <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                  <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-4">
-                      <span class="font-bold text-lg leading-[27px] text-left">What if we have other questions?</span>
-                      <div class="arrow w-9 h-9 flex shrink-0">
-                          <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
-                      </div>
-                  </button>
-                  <div id="accordion-faq-4" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
-    <div class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
-      <div class="flex flex-col gap-10">
-        <div class="flex items-center gap-3">
-          <div class="flex shrink-0 h-[43px] overflow-hidden">
-              <img src="{{ asset('assets/logo/logo-removebg-preview.png') }}" class="object-contain w-full h-full" alt="logo">
-          </div>
-          <div class="flex flex-col">
-            <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">PT.Arisma Teknika Mesari</p>
-            <p id="CompanyTagline" class="text-sm text-cp-light-grey">We are Here for You</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="assets/icons/youtube.svg" class="w-full h-full object-contain" alt="youtube">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain" alt="whatsapp">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{ asset('assets/icons/facebook.svg') }}" class="w-full h-full object-contain" alt="facebook">
-            </div>
-          </a>
-          <a href="">
-            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{ asset('assets/icons/instagram.svg') }}" class="w-full h-full object-contain" alt="instagram">
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-[50px]">
-        <div class="flex flex-col w-[200px] gap-3">
-          <p class="font-bold text-lg text-white">Products</p>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Trading Simulation</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Insight</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Edutrade</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Arisma Market Advisory</a>
-        </div>
-        <div class="flex flex-col w-[200px] gap-3">
-          <p class="font-bold text-lg text-white">About</p>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">We’re Hiring</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Big Purposes</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Investor Relations</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Media Press</a>
-        </div>
-        <div class="flex flex-col w-[200px] gap-3">
-          <p class="font-bold text-lg text-white">Useful Links</p>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy & Policy</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms & Conditions</a>
-          <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact Us</a>
-          <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Download Template</a>
-        </div>
-      </div>
-    </div>
-    <div class="absolute -bottom-[135px] w-full">
-      <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">ARISMA</p>
-    </div>
-  </footer>
+  <!--Call with component/footer.blade.php -->
+  <x-footer />
+
   <div id="video-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
       <div class="relative p-4 w-full lg:w-1/2 max-h-full">
           <!-- Modal content -->
@@ -478,15 +263,8 @@
       </div>
   </div>
 
+  <!--Call with component/script.blade.php -->
+  <x-script />
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-  <!-- JavaScript -->
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
-  <script src="{{ asset('js/carousel.js') }}"></script>
-  <script src="{{ asset('js/accordion.js') }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <script src="{{ asset('js/modal-video.js') }}"></script>
 </body>
 </html>

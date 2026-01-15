@@ -23,10 +23,15 @@ class UpdateAboutRequest extends FormRequest
     {
         return [
             //
-            'name' => ['required','string','max:255'],
-            'type' => ['required','string','max:255'],
-            'icon'=> ['sometimes','image','mimes:png,jpg,jpeg,webp,svg'],
-            'keypoints.*' => ['required','string','max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'in:Visions,Missions'],
+
+            // samakan dengan name="thumbnail" di form
+            'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,jpeg,webp,svg'],
+
+            // keypoints berupa array
+            'keypoints' => ['sometimes', 'array'],
+            'keypoints.*' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

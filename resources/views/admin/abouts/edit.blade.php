@@ -49,7 +49,7 @@
                     <h3 class="text-indigo-950 text-lg font-bold mt-4">Keypoints</h3>
                         
                         <div class="flex flex-col gap-y-5">
-                            <x-input-label for="keypoints"/> 
+                            <x-input-label for="keypoints"/>
                                 <input type="text" class="py-3 rounded-lg border-slate-300 border" value="{{ $about->keypoints[0]->keypoint ?? '' }}" name="keypoints[]">
                         </div>
 

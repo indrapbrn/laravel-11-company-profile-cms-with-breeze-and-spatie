@@ -14,4 +14,9 @@ class CompanyKeypoint extends Model
         'company_about_id',
         'keypoint'
     ];
+
+    public function companyAbout()
+    {
+        return $this->belongsTo(CompanyAbout::class);
+    }
 }
