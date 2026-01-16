@@ -10,46 +10,53 @@
           <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
               <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                   <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-1">
-                      <span class="font-bold text-lg leading-[27px] text-left">Can installments be beneficial for both?</span>
+                      <span class="font-bold text-lg leading-[27px] text-left">What is PT Arisma Teknika Mesari?</span>
                       <div class="arrow w-9 h-9 flex shrink-0">
                           <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
                       </div>
                   </button>
                   <div id="accordion-faq-1" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">
+                        PT Arisma Teknika Mesari is a futures trading company that provides education, analysis, and consulting services to help clients understand opportunities and risks in the futures market.
+                      </p>
                   </div>
               </div>
               <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                   <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-2">
-                      <span class="font-bold text-lg leading-[27px] text-left">What kind of framework you popular with?</span>
+                      <span class="font-bold text-lg leading-[27px] text-left">What types of futures products do you cover?</span>
                       <div class="arrow w-9 h-9 flex shrink-0">
                           <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
                       </div>
                   </button>
                   <div id="accordion-faq-2" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">
+                        We cover various futures instruments, including commodities, indices, and financial derivatives, based on market conditions and regulatory standards.
+                      </p>
                   </div>
               </div>
               <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                   <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-3">
-                      <span class="font-bold text-lg leading-[27px] text-left">What insurance provider do you use?</span>
+                      <span class="font-bold text-lg leading-[27px] text-left">Do you provide investment recommendations?</span>
                       <div class="arrow w-9 h-9 flex shrink-0">
                           <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
                       </div>
                   </button>
                   <div id="accordion-faq-3" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                    We provide analytical insights and market perspectives to support informed decision-making. All trading decisions remain the responsibility of the client.
+                  </p>
                   </div>
               </div>
               <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                   <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-4">
-                      <span class="font-bold text-lg leading-[27px] text-left">What if we have other questions?</span>
+                      <span class="font-bold text-lg leading-[27px] text-left">Is futures trading suitable for beginners?</span>
                       <div class="arrow w-9 h-9 flex shrink-0">
                           <img src="assets/icons/arrow-circle-down.svg" class="transition-all duration-300" alt="icon">
                       </div>
                   </button>
                   <div id="accordion-faq-4" class="accordion-content hide">
-                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients assets to the max level so that we chose the best one from Jakarta, Indonesia will also protect post building finished completed ahead one.</p>
+                      <p class="leading-[30px] text-cp-light-grey pt-[14px]">
+                        Futures trading carries high risk and may not be suitable for everyone. Beginners are advised to learn fundamental concepts and risk management before participating.
+                      </p>
                   </div>
               </div>
           </div>

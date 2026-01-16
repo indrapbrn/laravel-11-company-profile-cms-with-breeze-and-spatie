@@ -36,7 +36,7 @@
         </div>
 
         <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+            <p class="badge w-fit bg-cp-pale-red text-cp-dark-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 OUR {{ strtoupper($about->type) }}
             </p>
 

@@ -55,7 +55,7 @@
   <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">
-        <p class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
+        <p class="badge w-fit bg-cp-pale-red text-cp-dark-red p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR PRINCIPLES</p>
         <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice For Your Company</h2>
       </div>
     </div>
@@ -115,7 +115,7 @@
           <h2 class="font-bold text-4xl leading-[45px]">{{$product->name}}</h2>
           <p class="leading-[30px] text-cp-light-grey">{{$product->about}}</p>
         </div>
-        <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</a>
+        <a href="{{ route('front.appointment') }}" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book Appointment</a>
       </div>
   </div>
   @empty
@@ -127,7 +127,7 @@
   <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
     <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
       <div class="flex flex-col gap-[14px] items-center">
-        <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
+        <p class="badge w-fit bg-cp-pale-red text-cp-dark-red p-[8px_16px] rounded-full uppercase font-bold text-sm">OUR POWERFUL TEAM</p>
         <h2 class="font-bold text-4xl leading-[45px] text-center">Meet the People <br> Behind Our Company</h2>
       </div>
       <div class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">      
