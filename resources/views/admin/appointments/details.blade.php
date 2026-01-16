@@ -73,8 +73,17 @@
 
                 <hr class="my-5">
 
-                <a href="https://wa.me/{{ '62' . ltrim($appointment->phone_number, '0' ) }}" class="text-center font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
-                    Follow Up Customer
+                @php
+                $phone = preg_replace('/[^0-9]/', '', $appointment->phone_number);
+                $phone = ltrim($phone, '0');
+                $phone = preg_replace('/^62/', '', $phone);
+                @endphp
+
+                <a
+                href="https://wa.me/62{{ $phone }}"
+                target="_blank"
+                class="text-center font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                Follow Up Customer
                 </a>
 
             </div>
