@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ asset('css/output.css') }}" rel="stylesheet">
+  <link href="{{asset('css/output.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CSS for carousel/flickity-->
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
 </head>
 <body class="font-poppins text-cp-black">
   
-  <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
-    <div class="container max-w-[1130px] mx-auto relative pt-10 pb-10 z-10">   
-        <x-navbar/>
+  <div id="header" class="bg-[#F6F7FA] relative h-[700px] -mb-[488px]">
+    <div class="container max-w-[1130px] mx-auto relative pt-10  z-10">
+        <x-navbar />
     </div>
   </div>
-
+  
   <div id="Contact" class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-[50px] mt-32 mb-24 relative z-10">
     
     <div class="flex flex-col mt-20 gap-[50px] ">
@@ -193,14 +194,14 @@
     </div>
   </div>
 
-  <x-footer />
-  <x-script />
 
-  <script src="js/contact-form.js"></script>
+   <x-footer />
+  
+  <script src="{{ asset('js/contact-form.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <!-- JavaScript -->
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
-  <script src="js/carousel.js"></script>
+  <script src="{{ asset('js/carousel.js') }}"></script>
 </body>
 </html>

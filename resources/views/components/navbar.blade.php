@@ -12,13 +12,13 @@
               <li class="{{request()->routeIs('front.index') ? 'text-cp-dark-blue' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
                 <a href="{{ route('front.index') }}">Home</a>
               </li>
-              <li class="{{request()->routeIs('front.product') ? 'text-cp-dark-blue' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
+              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
                 <a href="{{ route('front.product') }}">Products</a>
               </li>
-              <li class="{{request()->routeIs('front.about') ? 'text-cp-dark-blue' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
+              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
                 <a href="{{ route('front.about') }}">About</a>
               </li>
-              <li class="{{request()->routeIs('front.team') ? 'text-cp-dark-blue' : ''}} font-semibold hover:text-cp-dark-blue transition-all duration-300">
+              <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
                 <a href="{{ route('front.team') }}">Team</a>
               </li>
             </ul>
